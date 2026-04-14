@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/NGO_Minimal_Setup/NGO_Setup.unity
     guid: f50cdb78336f2d647b7e14f42e36e68f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NGO.unity
     guid: abca260bd4953b04090d296ce4912210
+  - enabled: 1
+    path: Assets/Scenes/NGO_FPS_Menu.unity
+    guid: 0bdd6e0ae8c905648b4a46f15a2afd49
   - enabled: 1
     path: Assets/Scenes/NGO_FPS.unity
     guid: 0b6ca04ac7938ec45bfea51eddb6cd6d
