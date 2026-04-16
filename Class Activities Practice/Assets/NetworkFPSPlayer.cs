@@ -9,12 +9,16 @@ public class NetworkFPSPlayer : NetworkBehaviour
     [Header("Player Components")]
     [SerializeField] private Transform cameraPivot;
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private Animator animator;
 
     [Header("Player Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float lookSensitivity = 2f;
     [SerializeField] private float maxPitch = 80f;
-    [SerializeField]
+
+    [Header("Animator Params")]
+    [SerializeField] private string speedParam = "Speed";
+    
     private PlayerInput pi;
     private InputAction lookAction;
     [SerializeField]
@@ -32,7 +36,6 @@ public class NetworkFPSPlayer : NetworkBehaviour
         {
             if (playerCamera) playerCamera.enabled = false;
             if(pi) pi.enabled = false;
-            enabled = false;
             return;
         }
 
@@ -57,5 +60,8 @@ public class NetworkFPSPlayer : NetworkBehaviour
         pitch -= look.y;
         pitch = Mathf.Clamp(pitch, -maxPitch, maxPitch);
         cameraPivot.localEulerAngles = new Vector3 (pitch, 0f, 0f);
+
+        if (animator) animator.SetFloat(speedParam, m.magnitude);
+
     }
 }
